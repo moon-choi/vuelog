@@ -23,13 +23,26 @@
       </div>
     </div>
   </nav>
+  <div class="container mt-4">
+    <h4>Moon Choi's Blog</h4>
+    <p>Powered by Vue.js</p>
+  </div>
+  <List :post="post" v-for="(post) in posts" :key="post"/>
 </template>
 
 <script>
 
+import List from './components/List.vue';
+import posts from './assets/posts';
 export default {
   name: 'App',
+  data() {
+    return {
+      posts,
+    }
+  },
   components: {
+    List,
   }
 }
 </script>

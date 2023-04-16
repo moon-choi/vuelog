@@ -2,7 +2,8 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -23,16 +24,18 @@
       </div>
     </div>
   </nav>
-  <div class="container mt-4">
-    <h4>Moon Choi's Blog</h4>
-    <p>Powered by Vue.js</p>
-  </div>
-  <List :post="post" v-for="(post) in posts" :key="post"/>
+
+  <router-link to="/">Home</router-link>
+
+  <!-- /list로 접속했을때만 뜸 -->
+  <router-view to="list" :post="post" v-for="(post) in posts" :key="post"></router-view>
+
+  <!-- <List :post="post" v-for="(post) in posts" :key="post"/> -->
 </template>
 
 <script>
 
-import List from './components/List.vue';
+// import List from './components/List.vue';
 import posts from './assets/posts';
 export default {
   name: 'App',
@@ -42,7 +45,7 @@ export default {
     }
   },
   components: {
-    List,
+    // List,
   }
 }
 </script>

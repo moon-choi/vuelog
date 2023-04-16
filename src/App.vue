@@ -25,10 +25,15 @@
     </div>
   </nav>
 
-  <router-link to="/">Home</router-link>
+  <router-link to="/">Home </router-link>
 
   <!-- /list로 접속했을때만 뜸 -->
-  <router-view to="list" :post="post" v-for="(post) in posts" :key="post"></router-view>
+  <router-link to="list">List </router-link>
+  <router-link to="detail">Detail </router-link>
+  <div class="mt-4">
+    <router-view :post="post" v-for="(post) in posts" :key="post">
+    </router-view>
+  </div>
 
   <!-- <List :post="post" v-for="(post) in posts" :key="post"/> -->
 </template>

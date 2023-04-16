@@ -1,14 +1,12 @@
 <template>
-  <div class="post">
-    <h5> {{ post.title }} </h5>
-    <p>{{ post.date }}</p>
-  </div> 
+  <h5> {{ posts[0].title }} </h5>
+  <p>{{ posts[0].date }}</p>
 </template>
 
 <script>
 export default {
   props: {
-    post: Object,
+    posts: Array,
   }
 }
 </script>
